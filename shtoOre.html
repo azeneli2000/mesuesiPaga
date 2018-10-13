@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" href="style.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+        
+  <style>
+    h5{
+      padding: 10px;
+    }
+  </style>
+  <title>Oret e mesuesve</title>
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">ShkollaJopublikeNr1</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="shtoMesues.html">Mesues</a></li>
+            <li><a href="shtoOre.html">Ore</a></li>
+            <li><a href="provaChips.html">Ulje</a></li>
+
+            <li><a id="login" onclick="logout()"></a></li>
+          </ul>
+        </div>
+      </nav>
+<div style = "height: 2em" ></div>
+
+<div class="row">
+<form id = "kerkoMesues" >
+  <div style="display:none" > <input id= "hideen" type="text">  </div>
+  <div style="display:none" > <input id= "pagaDinamike" type="text">  </div>
+  <div style="display:none" > <input id= "vjetersia" type="text">  </div>
+  <div style="display:none" > <input id= "kategoria" type="text">  </div>
+  <div class="input-field col s10">
+      <select  id="selectMesuesi" name = "selectMesuesi">
+          <option value="" disabled selected>Zgjidh mesuesin</option>>
+      </select>
+    </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">KERKO
+          <i class="material-icons right">search</i>
+        </button> 
+    
+  
+</form>
+</div>
+<form id = "shtoLende" >
+   
+      <div class="row">
+        
+          <div class="input-field col s3">
+              <select id='selectLenda' name ='selectLenda'>
+                  <option value="" disabled selected>Lendet</option>   
+              
+                      <option value="Matematike">Matematike</option>
+                      <option value="Gjuhe">Gjuhe</option>
+                   
+                   
+                      <option value="Kimi">Kimi</option>
+                      <option value="Fizike">Fizike</option>
+                  
+              </select>
+            </div>
+
+            <div class="input-field col s1">
+                <select id='selectKlasa'>
+                   
+                        <option value="" disabled selected>Klasa</option> 
+                      <option value="0">K</option>
+                
+
+                  
+                        <option value="1">I</option>
+                        <option value="2">II</option>
+                        <option value="3">III</option>
+                        <option value="4">IV</option>
+                        <option value="5">V</option>
+                     
+                    
+                          <option value="6">VI</option>
+                          <option value="7">VII</option>
+                          <option value="8">VIII</option>
+                          <option value="9">IX</option>
+                        
+                    
+                        <option value="10">X</option>
+                        <option value="11">XI</option>
+                        <option value="12">XII</option>
+                      
+                </select>
+              </div>
+
+           
+              <div class="input-field col s3">
+                  <input id="perqindjeLenda" type="text" class="validate" required="" aria-required="true">
+                  <label for="perqindjeLenda">% Lenda</label>
+                </div>
+      
+        <div class="input-field col s3">
+            <input id="nrNxenesiKlase" type="text" class="validate" required="" aria-required="true">
+            <label for="nrNxenesiKlase">Nr nxenesve</label>
+          </div>
+         
+      
+        <div class="input-field col s3">
+            <input id="orejave" type="text" class="validate" required="" aria-required="true">
+            <label for="orejave">Ore ne jave</label>
+          </div>
+      
+        <div class="input-field col s3">
+            <input id="javetot" type="text" class="validate" required="" aria-required="true" required="" aria-required="true">
+            <label for="javetot">Jave gjithesej</label>
+          </div>
+
+        <div class="input-field col s3">
+            <input id="shteseinst" type="text" class="validate" required="" aria-required="true">
+            <label for="shteseinst">Bonus</label>
+          </div>
+
+          <div class="switch col s1" >
+              <label>
+                  <input id ="paralele" type="checkbox" />
+                  <span>Paralele</span>
+                </label>
+            </div>
+          <!-- <a type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">save</i>SHTO</a> -->
+         
+          <button class="btn waves-effect waves-light" type="submit" name="action">SHTO
+            <i class="material-icons right">send</i>
+          </button> 
+                
+        
+        <!-- <button>bbb</button> -->
+                
+
+      </div>
+    </form>
+    <h4 id="paga" class  = "red-text darken-4-text "></h4>
+    <ul id= "lendaList"></ul>
+  </div>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+     apiKey: "AIzaSyDlsr-31qdIEGsrX3qJ1-GYiOuGv0MQGWM",
+     authDomain: "pagesatmesuesi.firebaseapp.com",
+     databaseURL: "https://pagesatmesuesi.firebaseio.com",
+     projectId: "pagesatmesuesi",
+     storageBucket: "pagesatmesuesi.appspot.com",
+     messagingSenderId: "196228828233"
+};
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); 
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+    
+  });
+</script>
+<!-- <script>
+document.getElementById("selectMesuesi").addEventListener('contentChanged', function() {
+  document.getElementById("selectMesuesi").material_select();
+});
+</script> -->
+<!--jquery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="authFirebase.js"></script>
+<script src="shtoOre.js"></script>
+
+</body>
+</html>

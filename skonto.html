@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+     <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+</head>
+<body>
+    <!-- <h3 style="text-align: center">Nxenesi : </h3>
+    <h4>Cmimi : </h4> -->
+    
+    
+    
+    <div class="conteiner">
+    <div class="row">
+            <ul class="collection with-header col s3 ">
+                    <li class="collection-header  indigo-text text-darken-3" id = "emri"><h3></h3></li>
+                    <li class="collection-item  green-text text-darken-4" id = "klasa"></li>
+                    <li class="collection-item red-text text-darken-4" id = "cmimi"></li>
+                    <li class="collection-item" id = "kesti"></li>
+                  </ul>
+                        
+    </div>
+        <div class="row">
+    <div class="input-field col s12" id="mySelect">
+        <select multiple>
+          <!-- <option value="" disabled selected>Zgjidh uljen : </option> -->
+          <option value="1">burse per freekuentim</option>
+          <option value="2">burse per olimpiade</option>
+          <option value="3"></option>
+          <option value="4">burse pe sjellje te mire</option>
+          <option value="5">burse per nota te mira</option>
+          <option value="6"></option>
+          <option value="7">burse per rezultat ne konkurs</option>
+          <option value="7"></option>
+          <option value="8">burse se jane dy femije</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">burse se ka prindin mesues</option>
+          <option value="14">14</option>
+          <option value="15">burse per heren e pare</option>
+          <option value="16"></option>
+          
+        </select>
+        <label>Uljet nga shkolla</label>
+      </div>
+    </div>
+
+    <div class="row">
+            <div class="input-field col s3">
+                    <input id="uljepersonale" type="text" value = "0">
+                    <label for="uljepersonale">Ulje personale</label>
+                  </div>
+    </div>
+    <div>
+            <button class="btn waves-effect waves-light" type="submit" name="action">RUAJ
+                    <i class="material-icons right">save</i>
+                  </button> 
+                        
+    </div>
+</div>
+   
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!--materialize js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="skonto.js"></script>
+</body>
+</html>

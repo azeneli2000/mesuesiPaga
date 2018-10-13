@@ -1,0 +1,125 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+  <style>
+    h5{
+      padding: 10px;
+    }
+  </style>
+  <title>Mesuesit</title>
+</head>
+<body>
+
+
+  <div class="container">
+    
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">ShkollaJopublikeNr1</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="shtoMesues.html">Mesues</a></li>
+            <li><a href="shtoOre.html">Ore</a></li>
+            <li><a href="provaChips.html">Ulje</a></li>
+
+            <li><a id="login" onclick="logout()"></a></li>
+          </ul>
+        </div>
+      </nav>
+<div style = "height: 2em" ></div>
+
+
+ 
+
+    <form id = "shtoMesues" >
+      <div class="row">
+        <div class="input-field col s3">
+          <input id="emri" name ="emri" type="text" class="validate">
+          <label for="emri">Emri</label>
+        </div>
+      
+        <div class="input-field col s3">
+            <input id="mbiemri" name ="mbiemri" type="text" class="validate">
+            <label for="mbiemri">Mbiemri</label>
+          </div>
+        <div class="input-field col s3">
+            <input id="vjetersia" name ="vjetersia" type="text" class="validate">
+            <label for="vjetersia">Vjetersia</label>
+          </div>
+     
+
+          <div class="input-field col s2">
+              <select id = "kategoria" name = "kategoria">
+             <option value="" disabled selected>Kategoria</option> 
+                <option value="0">IV</option>
+                <option value="1">III</option>
+                <option value="2">II</option>
+                <option value="3">I</option>
+              </select>
+              </div>
+      
+
+
+          <!-- <a type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">save</i>SHTO</a> -->
+         
+          <button class="btn waves-effect waves-light" type="submit" name="action">SHTO
+            <i class="material-icons right">send</i>
+          </button> 
+                
+        
+        <!-- <button>bbb</button> -->
+                
+
+      </div>
+    </form>
+    <div class="content">
+    <ul id = "mesuesiList"></ul>
+  </div>
+  
+  </div>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+     apiKey: "AIzaSyDlsr-31qdIEGsrX3qJ1-GYiOuGv0MQGWM",
+     authDomain: "pagesatmesuesi.firebaseapp.com",
+     databaseURL: "https://pagesatmesuesi.firebaseio.com",
+     projectId: "pagesatmesuesi",
+     storageBucket: "pagesatmesuesi.appspot.com",
+     messagingSenderId: "196228828233"
+};
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); 
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="authFirebase.js"></script>
+
+<script src="shtoMesues.js"></script>
+
+</body>
+</html>

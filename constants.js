@@ -1,0 +1,1 @@
+const prenotimi = 100;
