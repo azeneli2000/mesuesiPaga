@@ -1,6 +1,6 @@
 
 //inicializon klasat
-    let viti : "2017-2018";
+    let viti = "2017-2018";
     db.collection('Nxenesit').doc(viti).set({});
    
    
