@@ -1,0 +1,432 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  
+  <!--firebase-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+  <style>
+    h5{
+      padding: 10px;
+    }
+  </style>
+  <title>Nxenesit</title>
+</head>
+<body>
+
+
+  <div class="container">
+    
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">ShkollaJopublikeNr1</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="shtoMesues.html">Mesues</a></li>
+            <li><a href="shtoOre.html">Ore</a></li>
+            <li><a href="provaChips.html">Ulje</a></li>
+
+            <li><a id="login" onclick="logout()"></a></li>
+          </ul>
+        </div>
+      </nav>
+<div style = "height: 2em" ></div>
+
+
+ 
+
+    <form id = "shtoNxenes" >
+        <div class="input-field col s2">
+            <select id = "vitishkollor" name = "vitishkollor">
+           <!-- <option value="" disabled selected>Viti</option>  -->
+              
+              <option value="2018-2019">2018-2019</option>
+             
+            </select>
+            </div>
+        <div class="row">                                   
+         <h5>Klasa I</h5>       
+            <div class="input-field inline">
+                <span>Shkolla</span>
+
+                <input id="shkollaKlasa1" type="number" class="validate">
+                <span class="helper-text" data-error="" data-success=""></span>
+              </div>
+              <div class="input-field inline">
+                <span>Transporti</span>
+
+                <input id="transportiKlasa1" type="number" class="validate">
+                
+                <span class="helper-text" data-error="" data-success=""></span>
+              </div>
+              <div class="input-field inline">
+                <span>Uniforma</span>
+
+                <input id="uniformaKlasa1" type="number" class="validate">
+               
+                <span class="helper-text" data-error="" data-success=""></span>
+              </div>
+              <div class="input-field inline">
+                <span>Librat</span>
+                <input id="libratKlasa1" type="number" class="validate">
+                <span class="helper-text" data-error="" data-success=""></span>
+              </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa II</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa2" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa2" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa2" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa2" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa III</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa3" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa3" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa3" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa3" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa IV</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa4" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa4" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa4" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa4" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa V</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa5" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa5" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa5" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa5" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa VI</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa6" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa6" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa6" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa6" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa VII</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa7" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa7" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa7" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa7" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa VIII</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa8" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa8" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa8" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa8" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa IX</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa9" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa9" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa9" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa9" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa X</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa10" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa10" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa10" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa10" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa XI</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa11" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa11" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa11" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa11" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <div class="row"> 
+         <h5>Klasa XII</h5>       
+         <div class="input-field inline">
+            <span>Shkolla</span>
+
+            <input id="shkollaKlasa12" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Transporti</span>
+
+            <input id="transportiKlasa12" type="number" class="validate">
+            
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Uniforma</span>
+
+            <input id="uniformaKlasa12" type="number" class="validate">
+           
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+          <div class="input-field inline">
+            <span>Librat</span>
+            <input id="libratKlasa12" type="number" class="validate">
+            <span class="helper-text" data-error="" data-success=""></span>
+          </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Ruaj
+        <i class="material-icons right">save</i>
+      </button> 
+            
+    </form>
+    
+  
+  </div>
+
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+     apiKey: "AIzaSyDlsr-31qdIEGsrX3qJ1-GYiOuGv0MQGWM",
+     authDomain: "pagesatmesuesi.firebaseapp.com",
+     databaseURL: "https://pagesatmesuesi.firebaseio.com",
+     projectId: "pagesatmesuesi",
+     storageBucket: "pagesatmesuesi.appspot.com",
+     messagingSenderId: "196228828233"
+};
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true }); 
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="authFirebase.js"></script>
+<script src="constants.js"></script>
+
+<script src="parametra.js"></script>
+</body>
+</html>
